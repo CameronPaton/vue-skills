@@ -7,8 +7,7 @@
           <li v-for="(data, index) in skills" :key='index'> {{ index }}. {{ data.skill }}</li>
         </ul>
 
-        <p v-if="skills.length >= 1">You have more than 1 more skill</p>
-        <p v-else>You have less than or equal to one skill</p>
+        <div v-bind:style="{ backgroundColor: bgColor, width: bgWidth, height: bgHeight }"></div>
 
     </div>
 
@@ -21,27 +20,20 @@ export default {
   name: "Skills",
   data() {
     return {
-      skills: [{ skill: "Vue.JS" }, { skill: "Frontend Developer" }]
-    };
+      skills: [{ skill: "Vue.JS" }, { skill: "Frontend Developer" }],
+      bgColor: 'yellow',
+      bgWidth: '100%',
+      bgHeight: '30px'
+      }
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.alert {
+  background-color: yellow;
+  width: 100%;
+  height: 30px;
 }
 </style>
